@@ -12,9 +12,11 @@
   </div>
 
    <div class="row row-cols-3 mt-3 gy-4"  >
+    <% @services.each do |service| %>
       <div class="col">
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#');">
-          Window cleaning
+          <%= link_to service.title, service_path(service), class: "link-light text-decoration-none" %>
         </div>
       </div>
+    <% end %>
   </div>
