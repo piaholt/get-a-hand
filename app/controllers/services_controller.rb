@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
   def edit
   end
 
-  def update
+  def updates
     @service.update(service_params)
 
     redirect_to service_path(@service)
@@ -33,7 +33,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.required(:service).permit(:title, :description, :category, :price)
+    params.required(:service).permit(:title, :description, :category, :price, :photo)
   end
 
   def set_service
