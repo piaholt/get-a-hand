@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :set_booking, only: %i[show destroy]
   def index
     @bookings = Booking.all
   end
@@ -13,16 +14,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.service = @service
-  end
-
-  def edit
-  end
-
-  def updates
-    @service.update(service_params)
-
+    @booking.save
     redirect_to service_path(@service)
   end
+
 
   def destroy
     @booking.destroy
