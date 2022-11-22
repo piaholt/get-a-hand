@@ -25,3 +25,7 @@ Service.create(title: "Window cleaning", description: "Handle building windows c
 puts "service created"
 Service.create(title: "Babysitting", description: "I love kids!", category: "Babysitting", price: 30, user_id: 3)
 puts "service created"
+Service.create(title: "Dogsitting", description: "I love dogs!", category: "Pet care", price: 25, user_id: 2)
+puts "service created"
+Service.create(title: "Organised moving team", description: "I can help you move out", category: "Moving", price: 25, user_id: 2)
+puts "service created"
