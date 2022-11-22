@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
   def edit
   end
 
-  def update
+  def updates
     @service.update(service_params)
 
     redirect_to service_path(@service)
