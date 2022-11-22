@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show destroy]
+  before_action :set_service, only: [:new, :create]
+
   def index
     @bookings = Booking.all
   end
@@ -14,8 +16,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.service = @service
-    @booking.save
-    redirect_to service_path(@service)
+    if @booking.save
+      redirect_to service_path(@service)
+    else
+      render :new
+    end
   end
 
 
@@ -29,9 +34,11 @@ class BookingsController < ApplicationController
   def booking_params
     params.required(:booking).permit(:starting_date, :end_date, :user_id, :service_id)
   end
+
   def set_booking
     @booking = Booking.find(params[:id])
   end
+
   def set_service
     @service = Service.find(params[:service_id])
   end
