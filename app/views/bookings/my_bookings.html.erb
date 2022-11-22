@@ -1,0 +1,19 @@
+<h1>MY BOOKING</h1>
+<% @bookings.each do |booking|%>
+<h3><%= booking.service.user.username %></h3>
+
+<%= booking.user.username %>
+<%= booking.user.email %>
+<p>________________________</p>
+<%= booking.user.location %>
+<p>________________________</p>
+<%= booking.user.first_name %>
+<%= booking.user.last_name %>
+<p>________________________</p>
+<%= booking.pending %>
+<%= booking.confirmed %>
+<p>________________________</p>
+<%= booking.starting_date %>
+<%= booking.end_date %>
+<% end %>
+<h6><strong><%= link_to "HOMEPAGE", root_path %></strong></h6>
