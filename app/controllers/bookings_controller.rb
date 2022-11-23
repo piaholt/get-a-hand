@@ -27,6 +27,13 @@ class BookingsController < ApplicationController
 
   def my_bookings
     @bookings = Booking.all
+    @user = current_user
+    # @bookings = Booking.where(user: current_user)
+  end
+
+  def my_requests
+    @bookings = Booking.all
+    @user = current_user
     # @bookings = Booking.where(user: current_user)
   end
 
