@@ -18,7 +18,7 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
     @service.user = current_user
     @service.save
-    redirect_to user_path(current_user)
+    redirect_to my_services_path(current_user)
   end
 
   def my_services
