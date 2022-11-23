@@ -1,5 +1,5 @@
 <div class="container">
-<h1>MY BOOKINGS</h1>
+<h1>MY BOOKING REQUESTS</h1>
 <% @bookings.each do |booking|%>
       <% if booking.user_id == @user.id %>
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
@@ -16,10 +16,13 @@
               <% else %>
                <small class="text-muted">Confirmed?  Not yet</small><br>
                <% end %>
-
+              <small class="text-muted"><%= button_to "confirm", "#", method: :get %></small><br>
               <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-               <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  booking.service.user.username %></small>
+                <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  booking.user.username %></small><br>
+                <small class="text-muted">Name:   <%= booking.user.first_name.capitalize %> <%= booking.user.last_name.capitalize %></small><br>
+                <small class="text-muted">Email: <%= booking.user.email %></small><br>
+                <small class="text-muted">Location: <%= booking.user.location %></small><br>
               </div>
               </div>
             </div>
