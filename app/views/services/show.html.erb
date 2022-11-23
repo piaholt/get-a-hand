@@ -8,6 +8,8 @@
     <%end %>
 </div>
 <div class="container">
+<br>
+<br>
     <% users = User.all %>
     <% users.each do |user| %>
     <% if user.id == @service.user_id %>
@@ -17,15 +19,17 @@
       <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
         <div class="bg-white rounded shadow h-100">
           <div class="p-3 rounded-bottom d-flex flex-column">
-            <strong><%= @service.title %> <span class="text-muted font-weight-normal">• <%= @service.price %> <i class="fas fa-star star-yellow"></i></span></strong>
+            <strong><%= @service.title %> <span class="text-muted font-weight-normal">• <%= @service.price %> <i class="fas fa-euro-sign"></i></span></strong>
             <small class="text-muted"><%= @service.description %></small>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-                <i class="fas fa-quote-left me-2"></i><small class="flex-grow-1"><%= @user.username %></small>
+               <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  @user.username %></small>
               </div>
             </div>
           </div>
         </div>
+        <p><%= button_to "Book", new_service_booking_path(@service), method: :get  %></p>
+
       </div>
   </div>
   <hr class="my-5">

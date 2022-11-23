@@ -10,13 +10,14 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @booking = Booking.new
+    @booking.service_id = @service.id
+    @booking.user_id = current_user.id
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.service = @service
+    @booking.user_id = current_user.id
     if @booking.save
       redirect_to service_path(@service)
     else
@@ -24,6 +25,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def my_bookings
+    @bookings = Booking.all
+    # @bookings = Booking.where(user: current_user)
+  end
 
   def destroy
     @booking.destroy
@@ -33,7 +38,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.required(:booking).permit(:starting_date, :end_date, :user_id, :service_id)
+    params.required(:booking).permit(:starting_date, :end_date, :service_id, :user_id)
   end
 
   def set_booking
