@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "my_bookings", to: "bookings#my_bookings", as: :my_bookings
 end

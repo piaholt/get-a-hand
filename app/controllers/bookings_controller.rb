@@ -25,6 +25,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def my_bookings
+    @bookings = Booking.all
+    # @bookings = Booking.where(user: current_user)
+  end
 
   def destroy
     @booking.destroy
