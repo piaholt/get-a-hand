@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'date'
-puts "Cleaning databse..."
+puts "Cleaning database..."
 
-Booking.destroy_all
-Service.destroy_all
 User.destroy_all
+Service.destroy_all
+Booking.destroy_all
 
 
 User.create(username: "bentest", first_name: "Ben", last_name: "Test", email: "ben.test@icloud.com", location: "London", password:"123456")
@@ -41,4 +41,3 @@ Service.create(title: "Locksmith", description: "Locked yourself out? Your lock 
 Service.create(title: "Lawn-mowing", description: "I can mow your lawn - no matter how big or small", category: "Gardening", price: 15, user_id: 4)
 Service.create(title: "Gardening", description: "Any kind of gardening, need someoone to trim your hedge, plant flowers or simply water your plants while your away? I got you", category: "Gardening", price: 20, user_id: 3)
 Service.create(title: "Dog sitting", description: "Any dog - big or small", category: "Pet care", price: 10, user_id: 2)
-
