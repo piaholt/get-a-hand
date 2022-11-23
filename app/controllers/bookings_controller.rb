@@ -11,16 +11,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @booking.service_id = @service.id
-    @booking.user_id = current_user.id
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user_id = current_user.id
+    @booking.service = @service
+    @booking.user = current_user
     if @booking.save
-      redirect_to service_path(@service)
+      redirect_to my_bookings_path(@booking)
     else
+      raise
       render :new
     end
   end

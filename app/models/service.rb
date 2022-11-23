@@ -4,4 +4,5 @@ class Service < ApplicationRecord
   belongs_to :user
   # validates_associated :user
   validates :category, :description, :title, :price, presence: true
+  # validates_uniqueness_of :user_id, scope: [:service_id]
 end

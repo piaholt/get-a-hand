@@ -22,7 +22,7 @@ class ServicesController < ApplicationController
     # @user = current_user
   end
 
-  def updates
+  def update
     @service.update(service_params)
 
     redirect_to service_path(@service)
