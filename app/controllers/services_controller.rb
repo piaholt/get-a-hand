@@ -18,6 +18,11 @@ class ServicesController < ApplicationController
     @service = Service.new(service_params)
   end
 
+  def my_services
+    @services = Service.all
+    @user = current_user
+  end
+
   def edit
     # @user = current_user
   end
