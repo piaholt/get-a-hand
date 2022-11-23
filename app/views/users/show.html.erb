@@ -1,0 +1,11 @@
+<div class="container">
+<h1><%= @user.username%></h1>
+
+<%= @user.first_name%>
+<%= @user.last_name%>
+<br>
+<%= @user.location%>
+<br>
+<%= button_to "edit profile", edit_user_path(@user), method: :get%>
+
+</div>
