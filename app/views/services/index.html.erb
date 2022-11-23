@@ -4,20 +4,20 @@
     <h2 class="text-center">Choose any kind of service</h2>
     <p class="text-center">Start now!</p>
   </div>
+
 </div>
 
 <div class="container mt-5">
   <div class="d-flex justify-content-between">
-    <h4>Services</h4>
+    <h4>Categories</h4>
   </div>
 
-
-     <div class="row row-cols-3 mt-3 gy-4"  >
-      <% @services.each do |service| %>
-        <div class="col">
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#');">
-            <%= link_to service.title, service_path(service), class: "link-light text-decoration-none" %>
-          </div>
+   <div class="row row-cols-3 mt-3 gy-4"  >
+    <% @services.each do |service| %>
+      <div class="col">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('#');">
+          <%= link_to service.category, service_path(service), class: "link-light text-decoration-none" %>
         </div>
+      </div>
     <% end %>
   </div>
