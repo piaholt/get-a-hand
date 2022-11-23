@@ -1,7 +1,7 @@
 <div class="container">
 <h1>MY BOOKING REQUESTS</h1>
 <% @bookings.each do |booking|%>
-      <% if booking.user_id == @user.id %>
+      <% unless booking.user_id == @user.id %>
         <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
           <div class="bg-white rounded shadow h-100">
             <div class="p-3 rounded-bottom d-flex flex-column">
