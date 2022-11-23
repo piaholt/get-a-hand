@@ -1,8 +1,8 @@
 <%= simple_form_for @booking do |f| %>
 <%= f.input :starting_date %>
 <%= f.input :end_date %>
-<%= f.input :service_id %>
-<%= f.input :user_id %>
+<%= f.hidden_field :service_id, value: @service.id %>
+<%= f.hidden_field :user_id , value: @booking.user_id %>
 
 <br>
    <%= f.submit %>
