@@ -2,7 +2,6 @@ class User < ApplicationRecord
   has_many :services
 
   has_many :bookings
-  has_many :services, through: :bookings
 
   validates :username, :first_name, :last_name, :location, :password, presence: true
   validates :username, uniqueness: { case_sensitive: false }
