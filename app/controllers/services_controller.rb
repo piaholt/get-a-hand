@@ -16,6 +16,9 @@ class ServicesController < ApplicationController
 
   def create
     @service = Service.new(service_params)
+    @service.user = current_user
+    @service.save
+    redirect_to user_path(current_user)
   end
 
   def my_services
@@ -48,4 +51,6 @@ class ServicesController < ApplicationController
   def set_service
     @service = Service.find(params[:id])
   end
+
+
 end
