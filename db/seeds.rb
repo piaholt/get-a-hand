@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+require 'date'
 puts "Cleaning databse..."
 Service.destroy_all
 User.destroy_all
@@ -21,7 +21,10 @@ User.create(username: "piatest", first_name: "Pia", last_name: "Test", email: "p
 puts "user created"
 
 
-Service.create(title: "Window cleaning", description: "Handle building windows cleaning", category: "Cleaning", price: 30, user_id: 1)
+
+
+Booking.create(user: User.first, service: Service.first, starting_date: DateTime.new(2022,12,1), end_date: DateTime.new(2022,12,3))
+
 puts "service created"
 Service.create(title: "Babysitting", description: "I love kids!", category: "Babysitting", price: 30, user_id: 3)
 puts "service created"
@@ -29,3 +32,4 @@ Service.create(title: "Dogsitting", description: "I love dogs!", category: "Pet 
 puts "service created"
 Service.create(title: "Organised moving team", description: "I can help you move out", category: "Moving", price: 25, user_id: 2)
 puts "service created"
+
