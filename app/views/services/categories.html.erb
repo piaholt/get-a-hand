@@ -1,5 +1,21 @@
 <div class="container">
 
+<%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
+<%= text_field_tag :query,
+params[:query],
+class: "form-control",
+placeholder: "Find a category"
+ %>
+ <%= hidden_field_tag :category,
+params[:category],
+class: "form-control",
+placeholder: "Find a category"
+ %>
+  <div >
+    <%= submit_tag "Search", class: "btn-ghost" %>
+  </div>
+<% end %>
+
 <% @services.each do |service| %>
 
   <strong><%= service.title %> <span class="text-muted font-weight-normal">• <%= service.price %> <i class="fas fa-euro-sign"></i></span></strong>
