@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   # get "/user/edit", to: "users#edit", as: :edit_user
   # patch  "/user", to: "users#update"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  get "/categories", to: "services#categories", as: :categories
 end

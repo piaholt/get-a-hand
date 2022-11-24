@@ -5,7 +5,6 @@ class ServicesController < ApplicationController
 
   def index
     if params[:query].present?
-        # @results = PgSearch.multisearch(params[:query])
       @services = Service.search_by_title_and_etc(params[:query])
     else
       @services = Service.all
@@ -52,7 +51,17 @@ class ServicesController < ApplicationController
     redirect_to my_services_path, status: :see_other
   end
 
-  def search_by_title_and_etc
+  def categories
+    case params[:category]
+    when "Babysitting"
+      @services = Service.where(category: "Babysitting")
+    when "Pet care"
+      @services = Service.where(category: "Pet care")
+    when "Cleaning"
+      @services = Service.where(category: "Cleaning")
+    when "Gardening"
+      @services = Service.where(category: "Gardening")
+    end
   end
 
   private
@@ -64,6 +73,4 @@ class ServicesController < ApplicationController
   def set_service
     @service = Service.find(params[:id])
   end
-
-
 end
