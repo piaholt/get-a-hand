@@ -52,15 +52,10 @@ class ServicesController < ApplicationController
   end
 
   def categories
-    case params[:category]
-    when "Babysitting"
-      @services = Service.where(category: "Babysitting")
-    when "Pet care"
-      @services = Service.where(category: "Pet care")
-    when "Cleaning"
-      @services = Service.where(category: "Cleaning")
-    when "Gardening"
-      @services = Service.where(category: "Gardening")
+    if params[:query].present?
+      @services = Service.search_by_name("#{params[:query]}+#{params[:category]}")
+    else
+      @services = Service.search_by_title_and_etc(params[:category])
     end
   end
 
