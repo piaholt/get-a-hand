@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
     @service.user = current_user
 
     if @service.save
-      redirect_to my_services_path(current_user), notice: "Booking requested"
+      redirect_to my_services_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
