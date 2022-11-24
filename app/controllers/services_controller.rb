@@ -5,8 +5,7 @@ class ServicesController < ApplicationController
 
   def index
     if params[:query].present?
-      # @results = PgSearch.multisearch(params[:query])
-      @services = Service.search_by_title_and_etc("#{params[:query]}")
+      @services = Service.search_by_title_and_etc(params[:query])
     else
       @services = Service.all
     end
@@ -30,14 +29,6 @@ class ServicesController < ApplicationController
     end
   end
 
-  def categoriesssssss
-    if params[:query].present?
-      @services = Service.search_by_title_and_etc("#{params[:query]}+#{params[:category]}")
-    else
-      @services = Service.search_by_title_and_etc("#{params[:category]}")
-    end
-  end
-
   def my_services
     @services = Service.all
     @user = current_user
@@ -56,10 +47,15 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
 
-    redirect_to services_path, status: :see_other
+    redirect_to my_services_path, status: :see_other
   end
 
-  def search_by_title_and_etc
+  def categories
+    if params[:query].present?
+      @services = Service.search_by_title_and_etc("#{params[:query]} #{params[:category]}")
+    else
+      @services = Service.search_by_title_and_etc(params[:category])
+    end
   end
 
   private
@@ -71,6 +67,4 @@ class ServicesController < ApplicationController
   def set_service
     @service = Service.find(params[:id])
   end
-
-
 end

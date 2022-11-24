@@ -7,11 +7,11 @@
    <%= image_tag asset_path('profile.png') %>
 <% end %>
 </div>
-<div class="my-3">
 <h1><%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%></h1>
 <br>
 <p> Username: <%= @user.username%></p>
 <p> Location: <%= @user.location%> </p>
-</div>
-<%= button_to "Message", "#", method: :get%>
+<p> Email: <%= @user.email%> </p>
+<%= button_to "edit profile", edit_user_registration_path(@user), method: :get%>
+
 </div>

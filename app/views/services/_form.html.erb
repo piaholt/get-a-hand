@@ -1,12 +1,8 @@
 <%= simple_form_for service do |f| %>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %><br><br>
-  <%= f.label :description %><br>
-  <%= f.text_field :description %><br><br>
-  <%= f.label :category %><br>
-  <%= f.text_field :category %><br><br>
-  <%= f.label :price %><br>
-  <%= f.text_field :price %><br><br>
+  <%= f.input :title %><br><br>
+  <%= f.input :description %><br><br>
+  <%= f.input :category, collection: Service::CATEGORY  %><br><br>
+  <%= f.input :price %><br><br>
   <%= f.input :photo, as: :file %>
   <%= f.submit "submit", class: "btn btn-secondary" %>
 <% end %>

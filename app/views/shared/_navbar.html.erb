@@ -1,7 +1,8 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag asset_path('logo4.png') %>
+    <%= link_to "/", class: "navbar-brand my-image" do %>
+      <%= image_tag asset_path('hand-logo-5.png') %>
+      <%= "Get-A-Hand" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,14 +11,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%= form_with url: services_path, method: :get, id:"search-bar", class: "d-flex" do %>
-          <%= text_field_tag :query,
-           params[:query],
-            class: "form-control",
-           placeholder: "Find a category"
-          %>
-         <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+
+
+
+
+
+
+
+
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Services", services_path, class: "nav-link" %>
@@ -26,9 +27,14 @@
             </li>
 
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+          <% @user = current_user%>
+          <% if @user.photo.attached?%>
+          <%= image_tag  cl_image_path @user.photo.key class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+          <% else %>
+          <%= image_tag asset_path('profile.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+          <% end %>
+           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
               <%= link_to "New Service", new_service_path, class: "dropdown-item" %>
               <%= link_to "My Services", my_services_path(current_user), class: "dropdown-item" %>
               <%= link_to "My Requests", my_requests_path(current_user), class: "dropdown-item" %>

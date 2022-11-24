@@ -78,6 +78,54 @@ gardening.photo.attach(io: URI.open("https://images.unsplash.com/photo-161757668
 gardening.save!
 puts "service created"
 
+admin = Service.new(
+  title: "Professional assistant",
+  description: "Honest and hardworking professional",
+  category: "Admin",
+  price: 70,
+  user: user_4,
+)
+
+admin.photo.attach(io: URI.open("https://images.unsplash.com/photo-1526656001029-20a71b17f7ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{admin}", content_type: "image/png")
+admin.save!
+puts "service created"
+
+babysitting_2 = Service.new(
+  title: "Fun babysitter",
+  description: "Your kids will love me!",
+  category: "Babysitting",
+  price: 28,
+  user: user_2,
+)
+
+babysitting_2.photo.attach(io: URI.open("https://media.istockphoto.com/id/1271954653/photo/affectionate-african-mother-constructing-building-with-cubes-with-small-kid.jpg?s=612x612&w=0&k=20&c=Ey89UGAP6GeKcdl8w8g7kk1qcIHcNiVYRu18u4PEtlA="), filename: "#{babysitting_2}", content_type: "image/png")
+babysitting_2.save!
+puts "service created"
+
+gardening_2 = Service.new(
+  title: "Experienced gardener",
+  description: "I have my own business and am highly experienced",
+  category: "Gardening",
+  price: 60,
+  user: user_3,
+)
+
+gardening_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"), filename: "#{gardening_2}", content_type: "image/png")
+gardening_2.save!
+puts "service created"
+
+cooking = Service.new(
+  title: "Passionate chef",
+  description: "I had my own catine and now wants to be more flexible",
+  category: "Cooking",
+  price: 50,
+  user: user_4,
+)
+
+cooking.photo.attach(io: URI.open("https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"), filename: "#{cooking}", content_type: "image/png")
+cooking.save!
+puts "service created"
+
 
 
 # Service.create(title: "Window cleaning", description: "Handle building windows cleaning", category: "Cleaning", price: 30, user_id: 1)

@@ -1,0 +1,29 @@
+<div class="container">
+
+<%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
+<%= text_field_tag :query,
+params[:query],
+class: "form-control",
+placeholder: "Find a category"
+ %>
+ <%= hidden_field_tag :category,
+params[:category],
+class: "form-control",
+placeholder: "Find a category"
+ %>
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<% @services.each do |service| %>
+
+  <strong><%= service.title %> <span class="text-muted font-weight-normal">• <%= service.price %> <i class="fas fa-euro-sign"></i></span></strong>
+  <small class="text-muted"><%= service.description %></small>
+
+    <div class="d-flex align-items-end justify-content-between pt-4">
+      <i class="fa-solid fa-user"></i><small class="flex-grow-1">
+    </div>
+      <p><%= button_to "Book", new_service_booking_path(service), method: :get  %></p>
+
+<% end %>
+
+</div>
