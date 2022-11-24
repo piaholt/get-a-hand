@@ -1,3 +1,16 @@
+
+<div class="container">
+  <div class="row row-cols-6 mtb-3 gy-4"  >
+    <% @services.each do |service| %>
+      <div class="col">
+          <%=link_to service.category, categories_path(category: service.category) %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dl7iiaefg/image/upload/v1669115006/development/te6kwicoxz1oap5haqma.jpg');">
   <div class="container">
     <h1 class="text-center">Get-a-hand</h1>

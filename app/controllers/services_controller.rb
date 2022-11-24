@@ -47,6 +47,19 @@ class ServicesController < ApplicationController
     redirect_to services_path, status: :see_other
   end
 
+  def categories
+    case params[:category]
+    when "Babysitting"
+      @services = Service.where(category: "Babysitting")
+    when "Pet care"
+      @services = Service.where(category: "Pet care")
+    when "Cleaning"
+      @services = Service.where(category: "Cleaning")
+    when "Gardening"
+      @services = Service.where(category: "Gardening")
+    end
+  end
+
   private
 
   def service_params
