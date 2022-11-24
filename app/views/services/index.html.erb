@@ -4,20 +4,12 @@
     <h1 class="text-center">Choose any kind of service</h1>
     <p class="text-center">Start now!</p>
   </div>
-  <%= form_with url: services_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a category"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 
 </div>
 
 <div class="container mt-5">
   <div class="d-flex justify-content-between">
-    <h4>Services</h4>
+    <h4 id="title">Services</h4>
   </div>
 
    <div class="row row-cols-3 mt-3 gy-4"  >
@@ -34,6 +26,18 @@
 
 <script>
 
-document.getElementById("search-bar").remove()
+// document.getElementById("search-bar").remove()
+const searchBar = document.getElementById("search-bar")
+const searchQuery = document.getElementById("query")
+const title = document.getElementById("title")
+
+const search = () => {
+  console.log("hello")
+  searchQuery.value="garden"
+  searchBar.submit()
+}
+
+title.addEventListener("click", search)
+
 
 </script>
