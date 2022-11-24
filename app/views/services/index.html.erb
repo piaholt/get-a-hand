@@ -22,7 +22,7 @@
 
 <div class="container mt-5">
   <div class="d-flex justify-content-between">
-    <h4>Services</h4>
+    <h4 id="title">Services</h4>
   </div>
 
    <div class="row row-cols-3 mt-3 gy-4"  >
@@ -33,4 +33,24 @@
         </div>
       </div>
     <% end %>
+
   </div>
+
+
+<script>
+
+// document.getElementById("search-bar").remove()
+const searchBar = document.getElementById("search-bar")
+const searchQuery = document.getElementById("query")
+const title = document.getElementById("title")
+
+const search = () => {
+  console.log("hello")
+  searchQuery.value="garden"
+  searchBar.submit()
+}
+
+title.addEventListener("click", search)
+
+
+</script>
