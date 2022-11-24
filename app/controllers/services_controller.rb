@@ -5,8 +5,8 @@ class ServicesController < ApplicationController
 
   def index
     if params[:query].present?
-        # @results = PgSearch.multisearch(params[:query])
-      @services = Service.search_by_title_and_etc(params[:query])
+      # @results = PgSearch.multisearch(params[:query])
+      @services = Service.search_by_title_and_etc("#{params[:query]}")
     else
       @services = Service.all
     end
@@ -28,7 +28,14 @@ class ServicesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
+  def categoriesssssss
+    if params[:query].present?
+      @services = Service.search_by_title_and_etc("#{params[:query]}+#{params[:category]}")
+    else
+      @services = Service.search_by_title_and_etc("#{params[:category]}")
+    end
   end
 
   def my_services
