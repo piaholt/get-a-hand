@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # resources :bookings
   get "/my_bookings", to: "bookings#my_bookings", as: :my_bookings
-  get "/my_services", to: "services#my_services", as: :my_services
+  get "/my_services/:id", to: "services#my_services", as: :my_services
   get "/my_requests", to: "bookings#my_requests", as: :my_requests
   get "/my_requests/confirm", to: "bookings#confirm", as: :confirm_request
   # get "/user", to: "users#show", as: :user
