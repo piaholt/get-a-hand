@@ -22,8 +22,13 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.user = current_user
-    @service.save
-    redirect_to my_services_path(current_user)
+
+    if @service.save
+      redirect_to my_services_path(current_user)
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   def my_services
