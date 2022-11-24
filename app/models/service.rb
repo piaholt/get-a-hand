@@ -16,4 +16,14 @@ class Service < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
+  pg_search_scope :search_by_name,
+  against: [:description],
+  associated_against: {
+    user: %i[first_name last_name username]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
 end

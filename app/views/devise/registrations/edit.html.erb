@@ -28,6 +28,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "location" }%>
+    <%= f.input :bio,
+                required: false,
+                autofocus: true,
+                hint: "tell us a little bit about yourself",
+                input_html: { autocomplete: "bio" }%>
     <%= f.input :photo, as: :file,
                 required: false,
                 hint: "Upload a profile photo"%>

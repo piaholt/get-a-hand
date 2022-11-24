@@ -11,14 +11,14 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%= form_with url: services_path, method: :get, id:"search-bar", class: "d-flex" do %>
-          <%= text_field_tag :query,
-           params[:query],
-            class: "form-control",
-           placeholder: "Find a category"
-          %>
-         <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+
+
+
+
+
+
+
+
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Services", services_path, class: "nav-link" %>
@@ -50,21 +50,3 @@
     </div>
   </div>
 </div>
-
-<script>
-
-// document.getElementById("search-bar").remove()
-const searchBar = document.getElementById("search-bar")
-const searchQuery = document.getElementById("query")
-const title = document.getElementById("title")
-
-const search = () => {
-  console.log("hello")
-  searchQuery.value="garden"
-  searchBar.submit()
-}
-
-title.addEventListener("click", search)
-
-
-</script>

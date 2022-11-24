@@ -32,7 +32,6 @@ class ServicesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def my_services
@@ -52,13 +51,12 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-
     redirect_to my_services_path, status: :see_other
   end
 
   def categories
     if params[:query].present?
-      @services = Service.search_by_name("#{params[:query]}+#{params[:category]}")
+      @services = Service.search_by_title_and_etc("#{params[:query]} #{params[:category]}")
     else
       @services = Service.search_by_title_and_etc(params[:category])
     end
