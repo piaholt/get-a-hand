@@ -7,7 +7,10 @@ class Service < ApplicationRecord
   # validates_uniqueness_of :user_id, scope: [:service_id]
   include PgSearch::Model
   pg_search_scope :search_by_title_and_etc,
-  against:[ :title],
+  against: [ :title, :description],
+  associated_against: {
+    user: %i[first_name last_name]
+  },
   using: {
     tsearch: { prefix: true }
   }
