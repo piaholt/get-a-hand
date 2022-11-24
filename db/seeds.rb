@@ -164,6 +164,19 @@ diy.photo.attach(io: URI.open("https://images.unsplash.com/photo-1595814433015-e
 diy.save!
 puts "service created"
 
+
+tutoring = Service.new(
+  title: "Helping students",
+  description: "I used to be a teacher and can help students until high school",
+  category: "Tutoring",
+  price: 80,
+  user: user_5,
+)
+
+tutoring.photo.attach(io: URI.open("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{tutoring}", content_type: "image/png")
+tutoring.save!
+puts "service created"
+
 other = Service.new(
   title: "Makeup",
   description: "I can help you with your makeup for any occasion!",
@@ -186,16 +199,4 @@ other_2 = Service.new(
 
 other_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"), filename: "#{other_2}", content_type: "image/png")
 other_2.save!
-puts "service created"
-
-tutoring = Service.new(
-  title: "Helping students",
-  description: "I used to be a teacher and can help students until high school",
-  category: "Tutoring",
-  price: 80,
-  user: user_5,
-)
-
-tutoring.photo.attach(io: URI.open("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{tutoring}", content_type: "image/png")
-tutoring.save!
 puts "service created"

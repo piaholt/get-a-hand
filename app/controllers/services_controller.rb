@@ -58,7 +58,7 @@ class ServicesController < ApplicationController
     if params[:query].present?
       @services = Service.search_by_title_and_etc("#{params[:query]} #{params[:category]}")
     else
-      @services = Service.search_by_title_and_etc(params[:category])
+      @services = Service.where(category: params[:category])
     end
   end
 
