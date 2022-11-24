@@ -45,7 +45,7 @@ puts "service created"
 dogsitting = Service.new(
   title: "Loving dogsitter",
   description: "I love all dogs, and they love me too!",
-  category: "Pet care",
+  category: "Pets",
   price: 40,
   user: user_2,
 )
@@ -126,10 +126,26 @@ cooking.photo.attach(io: URI.open("https://images.unsplash.com/photo-1551218808-
 cooking.save!
 puts "service created"
 
+locksmith = Service.new(
+  title: "Locksmith helper",
+  description: "Locked yourself out? Your lock is broken? Don't worry i can take care of it!",
+  category: "Locksmith",
+  price: 90,
+  user: user_1,
+)
 
+locksmith.photo.attach(io: URI.open("https://images.unsplash.com/flagged/photo-1564767609213-c75ee685263a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80"), filename: "#{locksmith}", content_type: "image/png")
+locksmith.save!
+puts "service created"
 
-# Service.create(title: "Window cleaning", description: "Handle building windows cleaning", category: "Cleaning", price: 30, user_id: 1)
-# Service.create(title: "Locksmith", description: "Locked yourself out? Your lock is broken? Don't worry i can take care of it!", category: "Locksmith", price: 50, user_id: 3)
-# Service.create(title: "Lawn-mowing", description: "I can mow your lawn - no matter how big or small", category: "Gardening", price: 15, user_id: 4)
-# Service.create(title: "Gardening", description: "Any kind of gardening, need someoone to trim your hedge, plant flowers or simply water your plants while your away? I got you", category: "Gardening", price: 20, user_id: 3)
-# Service.create(title: "Dog sitting", description: "Any dog - big or small", category: "Pet care", price: 10, user_id: 2)
+car = Service.new(
+  title: "Any car repair",
+  description: "I can handle most of car repairs for you",
+  category: "Car",
+  price: 110,
+  user: user_4,
+)
+
+car.photo.attach(io: URI.open("https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{car}", content_type: "image/png")
+car.save!
+puts "service created"
