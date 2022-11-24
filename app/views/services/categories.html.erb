@@ -1,31 +1,23 @@
-<div class="container">
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+        <div class="card shadow h-100" style="border-radius: 15px;">
+          <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light p-3 rounded-bottom d-flex flex-column" data-mdb-ripple-color="light">
 
-<%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
-<%= text_field_tag :query,
-params[:query],
-class: "form-control",
-placeholder: "Find a category"
- %>
- <%= hidden_field_tag :category,
-params[:category],
-class: "form-control",
-placeholder: "Find a category"
- %>
-  <div >
-    <%= submit_tag "Search", class: "btn-ghost" %>
-  </div>
-<% end %>
+              <strong><%= service.title %> <span class="text-muted font-weight-normal">• <%= service.price %> <i class="fas fa-euro-sign"></i></span></strong>
+              <small class="text-muted"><%= service.description %></small>
 
-<% @services.each do |service| %>
+                <div class="d-flex align-items-end justify-content-between pt-4">
+                  <i class="fa-solid fa-user"></i><small class="flex-grow-1">
+                </div>
 
-  <strong><%= service.title %> <span class="text-muted font-weight-normal">• <%= service.price %> <i class="fas fa-euro-sign"></i></span></strong>
-  <small class="text-muted"><%= service.description %></small>
 
-    <div class="d-flex align-items-end justify-content-between pt-4">
-      <i class="fa-solid fa-user"></i><small class="flex-grow-1">
+
+                  <p><%= button_to "Book", new_service_booking_path(service), method: :get  %></p>
+            <% end %>
+
+          </div>
+        </div>
     </div>
-      <p><%= button_to "Book", new_service_booking_path(service), method: :get  %></p>
-
-<% end %>
-
+  </div>
 </div>
