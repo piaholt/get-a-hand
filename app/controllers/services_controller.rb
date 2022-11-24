@@ -49,7 +49,7 @@ class ServicesController < ApplicationController
   def destroy
     @service.destroy
 
-    redirect_to services_path, status: :see_other
+    redirect_to my_services_path, status: :see_other
   end
 
   def search_by_title_and_etc

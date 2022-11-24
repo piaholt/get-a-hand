@@ -2,7 +2,7 @@
 <br>
 <div>
  <% if @user.photo.attached?%>
-    <%= image_tag  cl_image_path @user.photo.key, height: 400, crop: :fill %><br>
+    <%= image_tag  cl_image_path @user.photo.key %><br>
 <% else %>
    <%= image_tag asset_path('profile.png') %>
 <% end %>
