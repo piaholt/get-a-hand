@@ -8,6 +8,11 @@ class ServicesController < ApplicationController
       @services = Service.search_by_title_and_etc(params[:query])
     else
       @services = Service.all
+      categories = @services.pluck(:category).uniq
+      @services = []
+      categories.each do |category|
+        @services << Service.find_by(category: category)
+      end
     end
   end
 
