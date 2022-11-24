@@ -19,7 +19,9 @@
 
               <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
+               <%= link_to user_path(booking.service.user), class:"text-decoration-none" do %>
                <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  booking.service.user.username %></small>
+               <% end %>
               </div>
               </div>
             </div>
