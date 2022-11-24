@@ -17,13 +17,14 @@
             <small class="text-muted"><%= @service.description %></small>
             <div class="d-flex align-items-end justify-content-between pt-4">
               <div>
-               <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  @user.username %></small><br>
-               <small class="text-muted"><%= @user.email %></small>
+              <%= link_to user_path(@user), class:"text-decoration-none" do %>
+                 <i class="fa-solid fa-user"></i><small class="flex-grow-1">  <%=  @user.username %></small>
+               <% end %>
               </div>
             </div>
           </div>
         </div>
-        <p><%= button_to "Book", new_service_booking_path(@service), method: :get  %></p>
+        <p><%= link_to "Book", new_service_booking_path(@service), class: "btn btn-primary text-decoration-none"  %></p>
 
       </div>
   </div>
