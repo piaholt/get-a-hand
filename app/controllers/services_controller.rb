@@ -5,7 +5,6 @@ class ServicesController < ApplicationController
 
   def index
     if params[:query].present?
-        # @results = PgSearch.multisearch(params[:query])
       @services = Service.search_by_title_and_etc(params[:query])
     else
       @services = Service.all
