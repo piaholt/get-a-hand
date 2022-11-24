@@ -46,7 +46,6 @@ class ServicesController < ApplicationController
 
   def destroy
     @service.destroy
-
     redirect_to my_services_path, status: :see_other
   end
 
