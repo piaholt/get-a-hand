@@ -4,7 +4,12 @@ class ServicesController < ApplicationController
 
 
   def index
-    @services = Service.all
+    if params[:query].present?
+        # @results = PgSearch.multisearch(params[:query])
+      @services = Service.search_by_title_and_etc(params[:query])
+    else
+      @services = Service.all
+    end
   end
 
   def show
@@ -40,6 +45,9 @@ class ServicesController < ApplicationController
     @service.destroy
 
     redirect_to services_path, status: :see_other
+  end
+
+  def search_by_title_and_etc
   end
 
   private
