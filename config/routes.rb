@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   end
 
   # resources :bookings
-  get "/my_bookings", to: "bookings#my_bookings", as: :my_bookings
+  get "/my_bookings/:id", to: "bookings#my_bookings", as: :my_bookings
   get "/my_services/:id", to: "services#my_services", as: :my_services
-  get "/my_requests", to: "bookings#my_requests", as: :my_requests
-  get "/my_requests/confirm", to: "bookings#confirm", as: :confirm_request
+  get "/my_requests/:id", to: "bookings#my_requests", as: :my_requests
+  get "/my_requests/:id/confirm", to: "bookings#confirm", as: :confirm_request
   # get "/user", to: "users#show", as: :user
   # get "/user/edit", to: "users#edit", as: :edit_user
   # patch  "/user", to: "users#update"
