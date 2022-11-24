@@ -27,8 +27,13 @@
             </li>
 
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <% @user = current_user%>
+          <% if @user.photo.attached?%>
+          <%= image_tag  cl_image_path @user.photo.key class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+          <% else %>
+          <%= image_tag asset_path('profile.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+          <% end %>
+           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", profile_path(current_user), class: "dropdown-item" %>
               <%= link_to "New Service", new_service_path, class: "dropdown-item" %>
               <%= link_to "My Services", my_services_path(current_user), class: "dropdown-item" %>
