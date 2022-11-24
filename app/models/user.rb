@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :services
 
   has_many :bookings
+  has_one_attached :photo
 
   validates :username, :first_name, :last_name, :location, :password, presence: true
   validates :username, uniqueness: { case_sensitive: false }
