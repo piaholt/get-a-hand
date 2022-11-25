@@ -96,15 +96,16 @@
                             required: true,
                             input_html: { autocomplete: "new-password" } %>
               </div>
-              <div class="form-check d-flex justify-content-center mb-4">
+              <div class="form-check d-flex justify-content-center ">
                 <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                 <label class="form-check-label" for="form2Example33">
                   Subscribe to our newsletter
                 </label>
               </div>
-              <div id="submit-btn" class="form-actions btn btn-primary">
+              <div id="submit-btn" class="form-actions btn btn-primary btn-block mb-4 my-4">
                 <%= f.button :submit, "Sign up"%>
               </div>
+
             <% end %>
             <div class="text-center">
                 <p>or sign up with:</p>
@@ -120,8 +121,8 @@
                   <i class="fab fa-twitter"></i>
                 </button>
 
-                <button type="button" class="btn btn-link btn-floating mx-1">
-                  <i class="fab fa-github"></i>
+                <button type="button" class="btn btn-link btn-floating mx-1 my-3">
+                  <i class="fab fa-github"></i><br>
                 </button>
               </div>
             </form>

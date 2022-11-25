@@ -45,12 +45,10 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    # @user = current_user
   end
 
   def update
     @service.update(service_params)
-
     redirect_to service_path(@service)
   end
 

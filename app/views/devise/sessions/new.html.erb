@@ -1,36 +1,67 @@
+<!-- Pills navs -->
+
 <section class="vh-100" style="background-color: #bdd2b6;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+   <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+  <div class="card-body p-5 text-center">
+  <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link active"
+      id="tab-login"
+      data-mdb-toggle="pill"
+      href="#pills-login"
+      role="tab"
+      aria-controls="pills-login"
+      aria-selected="true"
+      >Login</a
+    >
+  </li>
+  <li class="nav-item" role="presentation">
+    <a
+      class="nav-link"
+      id="tab-register"
+      data-mdb-toggle="pill"
+      aria-selected="false"
+      role="tab"
+      href = <%= new_registration_path(resource_name) %>
+    >Register</a>
+  </li>
+</ul>
+<!-- Pills navs -->
 
-            <h3 class="mb-5">Sign in</h3>
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),data: {turbo: false}) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email,
-                          required: false,
-                          autofocus: true,
-                          input_html: { autocomplete: "email" } %>
-              <%= f.input :password,
-                           required: false,
-                           input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            </div>
-
-            <div class="form-actions btn btn-lg btn-block btn-primary" style="background-color: #65647c;">
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+      <!-- Email input -->
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),data: {turbo: false}) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+          <%= f.input :password,
+                       required: false,
+                       input_html: { autocomplete: "current-password" } %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        </div>
+         <div class="row mb-4">
+        <div class="col-md-6 d-flex justify-content-center">
+            <br><%= link_to "Forgot your password?", new_password_path(resource_name)%><br />
+        </div>
+        <div class="form-actions btn btn-block btn-primary mb-4 my-4" style="background-color: #65647c;">
               <%= f.button :submit, "Log in", style: "color: #efefef; font-size: 20px;"%>
                </div>
             <% end %>
-
-            <hr class="my-4">
-
-             <%= render "devise/shared/links" %>
-
-
-          </div>
-        </div>
+      <!-- Register buttons -->
+      <div class="text-center">
+        <p>Not a member? <%= link_to "Sign up", new_registration_path(resource_name), class:"btn btn-block" %><br></p>
       </div>
-    </div>
   </div>
+  </div>
+</div>
 </section>
+
+<!-- Pills content -->
