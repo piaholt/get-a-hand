@@ -36,7 +36,6 @@ user_5.photo.attach(io: URI.open("https://avatars.githubusercontent.com/u/937196
 user_5.save!
 puts "user created"
 user_6 = User.create(username: "LukasM", first_name: "Lukas", last_name: "Musilek", email: "lukas@test.com", location: "London", password:"123456")
-user_6.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U01HX4EMWG7-2882a4f4d121-512"), filename: "#{user_6}", content_type: "image/png")
 user_6.save!
 puts "user created"
 
