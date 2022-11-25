@@ -214,17 +214,6 @@ other_2.save!
 puts "service created"
 
 
-other_3 = Service.new(
-  title: "Hairdresser at home",
-  description: "Let me give your hairs a fresh look and a new life",
-  category: "Other",
-  price: 40,
-  user: user_5,
-)
-
-other_3.photo.attach(io: URI.open("https://plus.unsplash.com/premium_photo-1661762504132-c14f5d97acb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"), filename: "#{other_3}", content_type: "image/png")
-other_3.save!
-puts "service created"
 
 
 event = Service.new(
@@ -259,4 +248,38 @@ tutoring_2 = Service.new(
 )
 tutoring_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{tutoring_2}", content_type: "image/png")
 tutoring_2.save!
+puts "service created"
+
+other_5 = Service.new(
+  title: "Tatoo artist",
+  description: "A very creative tatoo artist, I can draw anything on your skin",
+  category: "Other",
+  price: 130,
+  user: user_6,
+)
+
+other_5.save!
+puts "service created"
+
+other_3 = Service.new(
+  title: "Plumber",
+  description: "I can unblock any sink, trust me!",
+  category: "Other",
+  price: 90,
+  user: user_3,
+)
+
+other_3.save!
+puts "service created"
+
+other_6 = Service.new(
+  title: "Hairdresser at home",
+  description: "Let me give your hairs a fresh look and a new life",
+  category: "Other",
+  price: 40,
+  user: user_5,
+)
+
+other_6.photo.attach(io: URI.open("https://plus.unsplash.com/premium_photo-1661762504132-c14f5d97acb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"), filename: "#{other_6}", content_type: "image/png")
+other_6.save!
 puts "service created"
