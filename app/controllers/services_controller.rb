@@ -6,6 +6,11 @@ class ServicesController < ApplicationController
   def index
     if params[:query].present?
       @services = Service.search_by_title_and_etc(params[:query])
+      categories = @services.pluck(:category).uniq
+      @services = []
+      categories.each do |category|
+        @services << Service.find_by(category: category)
+      end
     else
       @services = Service.all
       categories = @services.pluck(:category).uniq
