@@ -1,8 +1,13 @@
+<div class="card card-body w-50">
+
+
 <%= simple_form_for service do |f| %>
   <%= f.input :title %><br><br>
   <%= f.input :description %><br><br>
   <%= f.input :category, collection: Service::CATEGORY  %><br><br>
   <%= f.input :price %><br><br>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "submit", class: "btn btn-secondary" %>
+  <%= f.submit %>
 <% end %>
+
+</div>
