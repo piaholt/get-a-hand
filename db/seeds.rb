@@ -15,25 +15,24 @@ User.destroy_all
 
 
 
-
 user_1 = User.new(username: "benK", first_name: "Ben", last_name: "Kaefer", email: "ben@test.com", location: "London", password:"123456")
-user_1.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_1.photo.attach(io: URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665561644/ijdk8u1th6hbjjryyobs.jpg"), filename: "#{user_1}", content_type: "image/png")
 user_1.save!
 puts "user created"
 user_2 = User.new(username: "mateoW", first_name: "Mateo", last_name: "Westphal", email: "ben@.com", location: "London", password:"123456")
-user_2.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_2.photo.attach(io: URI.open("https://avatars.githubusercontent.com/u/115327575?v=4"), filename: "#{user_2}", content_type: "image/png")
 user_2.save!
 puts "user created"
 user_3 = User.create(username: "charI", first_name: "Charleen", last_name: "Ipping", email: "charleen@test.com", location: "London", password: "123456")
-user_3.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_3.photo.attach(io: URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665137023/vtecalo31mcg7b2sek6s.jpg"), filename: "#{user_3}", content_type: "image/png")
 user_3.save!
 puts "user created"
 user_4 = User.create(username: "piaH", first_name: "Pia", last_name: "Holtappels", email: "pia@test.com", location: "London", password:"123456")
-user_4.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_4.photo.attach(io: URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665432668/ktggpue9rpss8thcf3ti.jpg"), filename: "#{user_4}", content_type: "image/png")
 user_4.save!
 puts "user created"
 user_5 = User.create(username: "adriH", first_name: "Adrian", last_name: "Hards", email: "adrian@test.com", location: "London", password:"123456")
-user_5.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_5.photo.attach(io: URI.open("https://avatars.githubusercontent.com/u/93719632?v=4"), filename: "#{user_5}", content_type: "image/png")
 user_5.save!
 puts "user created"
 
