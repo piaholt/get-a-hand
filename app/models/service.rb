@@ -1,6 +1,6 @@
 class Service < ApplicationRecord
   has_one_attached :photo
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
   # validates_associated :user
   validates :description, :title, :price, presence: true
