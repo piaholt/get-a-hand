@@ -1,6 +1,30 @@
-<div class="container">
-<h1>New service</h1>
+<!-- Pills navs -->
 
-<%= render "form", service: @service  %>
+<section class="vh-200" style="background-color: #bdd2b6;">
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+   <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+  <div class="card-body p-5 text-center">
 
+<!-- Pills navs -->
+
+<!-- Pills content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+      <!-- Email input -->
+      <%= simple_form_for @service do |f| %>
+  <%= f.input :title %><br><br>
+  <%= f.input :description %><br><br>
+  <%= f.input :category, collection: Service::CATEGORY  %><br><br>
+  <%= f.input :price %><br><br>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+      <!-- Register buttons -->
+
+  </div>
+  </div>
 </div>
+</div>
+</section>
