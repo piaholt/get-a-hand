@@ -6,8 +6,11 @@
           <div class="rounded-top text-white d-flex flex-row" style="background-color: #395144; height:200px;">
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
             <% if @user.photo.attached?%>
-              <%= image_tag asset_path(cl_image_path @user.photo.key),class:"img-fluid img-thumbnail mt-4 mb-2",
-                style:"width: 150px; z-index: 1"%> %><br>
+
+
+              <%= image_tag  cl_image_path @user.photo.key, class:"img-fluid img-thumbnail mt-4 mb-2",
+                style:"width: 150px; z-index: 1"%><br>
+
             <% else %>
               <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2",
                 style:"width: 150px; z-index: 1"%>
@@ -36,7 +39,7 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                 <p class="font-italic mb-1"><%= @user.bio%> </p></p>
+                 <p class="font-italic mb-1"></p>Whats up guys I'm Adrian</p>
               </div>
             </div>
             <div class="card-body p-4 text-black">

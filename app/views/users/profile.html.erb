@@ -7,14 +7,16 @@
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
             <% if @user.photo.attached?%>
               <%= image_tag asset_path(cl_image_path @user.photo.key), class:"img-fluid img-thumbnail mt-4 mb-2",
-                style:"width: 150px; z-index: 1"%> %><br>
+
+
+                style:"width: 150px; z-index: 1"%><br>
+
             <% else %>
               <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2",
                 style:"width: 150px; z-index: 1"%>
             <% end %>
-            <%=link_to "Edit profile", edit_user_registration_path(@user), class:"btn btn-outline-dark"%>
             </div>
-            <div class="ms-3" style="margin-top: 130px;">
+            <div class="ms-3" style="margin-top: 80px;">
               <h5><%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%></h5>
               <p><%= @user.location%></p>
             </div>
@@ -43,7 +45,7 @@
             <div class="mb-5">
               <p class="lead fw-normal mb-1">About</p>
               <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1"><%= @user.bio%> </p></p>
+                <p class="font-italic mb-1">Hi, I'm Ben, I like to help out and I'm very versatile. Locksmithing is more of a hobby since my true passion is babysitting. I guess you could say I'm a full time baby lover!</p></p>
               </div>
             </div>
             </div>
