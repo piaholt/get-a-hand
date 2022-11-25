@@ -16,15 +16,25 @@ User.destroy_all
 
 
 
-user_1 = User.create(username: "bentest", first_name: "Ben", last_name: "Test", email: "ben.test@icloud.com", location: "London", password:"123456")
+user_1 = User.new(username: "benK", first_name: "Ben", last_name: "Kaefer", email: "ben@test.com", location: "London", password:"123456")
+user_1.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_1.save!
 puts "user created"
-user_2 = User.create(username: "mateotest", first_name: "Mateo", last_name: "Test", email: "mateo.test@icloud.com", location: "London", password:"123456")
+user_2 = User.new(username: "mateoW", first_name: "Mateo", last_name: "Westphal", email: "ben@.com", location: "London", password:"123456")
+user_2.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_2.save!
 puts "user created"
-user_3 = User.create(username: "char", first_name: "Charleen", last_name: "Ipping", email: "charleen.ip@gmail.com", location: "London", password: "123456")
+user_3 = User.create(username: "charI", first_name: "Charleen", last_name: "Ipping", email: "charleen@test.com", location: "London", password: "123456")
+user_3.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_3.save!
 puts "user created"
-user_4 = User.create(username: "piatest", first_name: "Pia", last_name: "Test", email: "pia.test@icloud.com", location: "London", password:"123456")
+user_4 = User.create(username: "piaH", first_name: "Pia", last_name: "Holtappels", email: "pia@test.com", location: "London", password:"123456")
+user_4.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_4.save!
 puts "user created"
-user_5 = User.create(username: "adrianH", first_name: "Adrian", last_name: "Hards", email: "adrian@test.com", location: "London", password:"123456")
+user_5 = User.create(username: "adriH", first_name: "Adrian", last_name: "Hards", email: "adrian@test.com", location: "London", password:"123456")
+user_5.photo.attach(io: URI.open("https://media.istockphoto.com/id/1309262552/photo/african-american-mother-singing-lullaby-for-infant-to-sleep.jpg?s=612x612&w=0&k=20&c=-jxrzTlr4qsS3KWpSNmLHglF-H1NQwWDkypoqL_hvc8="), filename: "#{user_1}", content_type: "image/png")
+user_5.save!
 puts "user created"
 
 
@@ -185,7 +195,7 @@ other = Service.new(
   user: user_2,
 )
 
-other.photo.attach(io: URI.open("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"), filename: "#{other}", content_type: "image/png")
+other.photo.attach(io: URI.open("https://images.unsplash.com/photo-1497005367839-6e852de72767?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2367&q=80"), filename: "#{other}", content_type: "image/png")
 other.save!
 puts "service created"
 
@@ -197,6 +207,19 @@ other_2 = Service.new(
   user: user_5,
 )
 
-other_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"), filename: "#{other_2}", content_type: "image/png")
+other_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"), filename: "#{other_2}", content_type: "image/png")
 other_2.save!
+puts "service created"
+
+
+other_3 = Service.new(
+  title: "Hairdresser at home",
+  description: "Let me give your hairs a fresh look and a new life",
+  category: "Other",
+  price: 40,
+  user: user_5,
+)
+
+other_3.photo.attach(io: URI.open("https://plus.unsplash.com/premium_photo-1661762504132-c14f5d97acb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"), filename: "#{other_3}", content_type: "image/png")
+other_3.save!
 puts "service created"
