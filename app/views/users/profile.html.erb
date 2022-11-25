@@ -7,8 +7,6 @@
             <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
             <% if @user.photo.attached?%>
               <%= image_tag asset_path(cl_image_path @user.photo.key), class:"img-fluid img-thumbnail mt-4 mb-2",
-
-
                 style:"width: 150px; z-index: 1"%><br>
 
             <% else %>
