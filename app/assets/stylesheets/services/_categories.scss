@@ -1,5 +1,6 @@
 #search-bar{
-  width: 60%;
+  width: 40%;
+  border: 1px #959090;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,4 +11,7 @@
     padding-bottom: 8px;
 
   }
+}
+.sticky-search{
+  position: sticky;
 }
