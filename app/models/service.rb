@@ -11,7 +11,7 @@ class Service < ApplicationRecord
   pg_search_scope :search_by_title_and_etc,
   against: [ :title, :description, :category],
   associated_against: {
-    user: %i[first_name last_name]
+    user: %i[first_name last_name username]
   },
   using: {
     tsearch: { prefix: true }

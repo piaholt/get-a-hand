@@ -2,18 +2,18 @@
 <section style="background-color: #eee;">
   <div class="container py-5">
 
+  <div >
 <%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
 <%= text_field_tag :query,
 params[:query],
 class: "form-control",
-placeholder: "Find a category"
+placeholder: "Find User/Title/Description"
  %>
  <%= hidden_field_tag :category,
 params[:category],
 class: "form-control",
-placeholder: "Find a category"
+placeholder: "Find User/Title/Description"
  %>
-  <div >
     <%= submit_tag "Search", class: "btn-ghost" %>
   </div>
 <% end %>

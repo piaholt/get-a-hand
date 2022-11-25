@@ -1,0 +1,11 @@
+#search-bar{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  #query{
+    border-radius: 50px;
+
+  }
+}
