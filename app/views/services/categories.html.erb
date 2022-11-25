@@ -2,21 +2,21 @@
 <section style="background-color: #eee;">
   <div class="container py-5">
 
-  <div >
-<%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
-<%= text_field_tag :query,
-params[:query],
-class: "form-control",
-placeholder: "Find User/Title/Description"
- %>
- <%= hidden_field_tag :category,
-params[:category],
-class: "form-control",
-placeholder: "Find User/Title/Description"
- %>
-    <%= submit_tag "Search", class: "btn-ghost" %>
+  <div class="sticky-search">
+    <%= form_with url: categories_path, method: :get, id:"search-bar", class: "d-flex" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find User/Title/Description"
+       %>
+       <%= hidden_field_tag :category,
+      params[:category],
+      class: "form-control",
+      placeholder: "Find User/Title/Description"
+       %>
+      <%= submit_tag "🔎", class: "btn-search" %>
+    <% end %>
   </div>
-<% end %>
 
     <div class="row row-cols-3 mt-3 gy-4">
 
