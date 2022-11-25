@@ -186,7 +186,6 @@ tutoring = Service.new(
   user: user_5,
 )
 
-tutoring.photo.attach(io: URI.open("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{tutoring}", content_type: "image/png")
 tutoring.save!
 puts "service created"
 
@@ -238,4 +237,26 @@ event = Service.new(
 
 event.photo.attach(io: URI.open("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"), filename: "#{event}", content_type: "image/png")
 event.save!
+puts "service created"
+
+other_4 = Service.new(
+  title: "Fitness coach",
+  description: "I can make you achieve your fitness goals, let's make this happen together!",
+  category: "Other",
+  price: 70,
+  user: user_6,
+)
+
+other_4.save!
+puts "service created"
+
+tutoring_2 = Service.new(
+  title: "Piano lessons",
+  description: "Piano is my passion, I can teach from classical to pop songs",
+  category: "Tutoring",
+  price: 75,
+  user: user_4,
+)
+tutoring_2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"), filename: "#{tutoring_2}", content_type: "image/png")
+tutoring_2.save!
 puts "service created"
