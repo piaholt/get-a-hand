@@ -12,9 +12,8 @@
               <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2",
                 style:"width: 150px; z-index: 1"%>
             <% end %>
-            <%=link_to "Edit profile", edit_user_registration_path(@user), class:"btn btn-outline-dark"%>
             </div>
-            <div class="ms-3" style="margin-top: 130px;">
+            <div class="ms-3" style="margin-top: 80px;">
               <h5><%= @user.first_name.capitalize%> <%= @user.last_name.capitalize%></h5>
               <p><%= @user.location%></p>
             </div>
