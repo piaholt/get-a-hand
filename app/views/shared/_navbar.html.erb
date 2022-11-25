@@ -22,7 +22,9 @@
           <li class="nav-item dropdown">
           <% @user = current_user%>
           <% if @user.photo.attached?%>
-          <%= image_tag  cl_image_path @user.photo.key class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+
+          <%= image_tag asset_path(cl_image_path @user.photo.key), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
+
           <% else %>
           <%= image_tag asset_path('profile.png'), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %><br>
           <% end %>
