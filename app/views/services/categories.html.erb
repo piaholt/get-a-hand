@@ -28,7 +28,7 @@
             <% if service.user.photo.attached?%>
             <%= image_tag  cl_image_path service.user.photo.key, height: 400, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
             <% else %>
-            <%= image_tag asset_path('lukas.jpg'), class:"img-fluid img-thumbnail mt-4 mb-2", style:"width: 150px; z-index: 1"%>
+            <%= image_tag asset_path('lukas.jpg'),height: 400, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
             <% end %>
               <div class="mask"></div>
             </a>
