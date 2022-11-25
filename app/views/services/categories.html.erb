@@ -25,8 +25,10 @@
         <div class="card shadow h-100" style="border-radius: 15px;">
           <div class="bg-image hover-overlay ripple ripple-surface ripple-surface-light p-3 rounded-bottom d-flex flex-column"
             data-mdb-ripple-color="light">
-            <% if service.photo.attached?%>
-            <%= image_tag  cl_image_path service.photo.key, height: 400, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
+            <% if service.user.photo.attached?%>
+            <%= image_tag  cl_image_path service.user.photo.key, height: 400, crop: :fill, style:"border-top-left-radius: 15px; border-top-right-radius: 15px;", class:"img-fluid"%><br>
+            <% else %>
+            <%= image_tag asset_path('profile.png'), class:"img-fluid img-thumbnail mt-4 mb-2", style:"width: 150px; z-index: 1"%>
             <% end %>
               <div class="mask"></div>
             </a>

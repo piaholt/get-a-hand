@@ -19,7 +19,7 @@ user_1 = User.new(username: "benK", first_name: "Ben", last_name: "Kaefer", emai
 user_1.photo.attach(io: URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1665561644/ijdk8u1th6hbjjryyobs.jpg"), filename: "#{user_1}", content_type: "image/png")
 user_1.save!
 puts "user created"
-user_2 = User.new(username: "mateoW", first_name: "Mateo", last_name: "Westphal", email: "ben@.com", location: "London", password:"123456")
+user_2 = User.new(username: "mateoW", first_name: "Mateo", last_name: "Westphal", email: "mateo@test.com", location: "London", password:"123456")
 user_2.photo.attach(io: URI.open("https://avatars.githubusercontent.com/u/115327575?v=4"), filename: "#{user_2}", content_type: "image/png")
 user_2.save!
 puts "user created"
