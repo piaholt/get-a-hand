@@ -4,7 +4,7 @@ class Service < ApplicationRecord
   belongs_to :user
   # validates_associated :user
   validates :description, :title, :price, presence: true
-  CATEGORY = %w[Pets Cleaning Babysitting Gardening Cooking Admin Car Locksmith DIY Tutoring Other]
+  CATEGORY = %w[Pets Cleaning Babysitting Gardening Cooking Admin Car Locksmith DIY Tutoring Events Other]
   validates :category, presence: true, inclusion: { in: CATEGORY }
   # validates_uniqueness_of :user_id, scope: [:service_id]
   include PgSearch::Model

@@ -35,6 +35,10 @@ user_5 = User.create(username: "adriH", first_name: "Adrian", last_name: "Hards"
 user_5.photo.attach(io: URI.open("https://avatars.githubusercontent.com/u/93719632?v=4"), filename: "#{user_5}", content_type: "image/png")
 user_5.save!
 puts "user created"
+user_6 = User.create(username: "LukasM", first_name: "Lukas", last_name: "Musilek", email: "lukas@test.com", location: "London", password:"123456")
+user_6.photo.attach(io: URI.open("https://ca.slack-edge.com/T02NE0241-U01HX4EMWG7-2882a4f4d121-512"), filename: "#{user_6}", content_type: "image/png")
+user_6.save!
+puts "user created"
 
 
 
@@ -221,4 +225,17 @@ other_3 = Service.new(
 
 other_3.photo.attach(io: URI.open("https://plus.unsplash.com/premium_photo-1661762504132-c14f5d97acb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80"), filename: "#{other_3}", content_type: "image/png")
 other_3.save!
+puts "service created"
+
+
+event = Service.new(
+  title: "Bartender",
+  description: "Let me be your bartender for the night, I make great cocktails!",
+  category: "Events",
+  price: 120,
+  user: user_6,
+)
+
+event.photo.attach(io: URI.open("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80"), filename: "#{event}", content_type: "image/png")
+event.save!
 puts "service created"
