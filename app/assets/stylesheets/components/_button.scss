@@ -1,5 +1,5 @@
 .btn-ghost {
-  color: #4A4A4A;
+  background-color: #ffffff !important;
   border: 1px solid #4A4A4A;
   padding: 8px 24px;
   border-radius: 50px;
@@ -8,7 +8,12 @@
   transition: opacity 0.3s ease;
 }
 
-.btn-ghost:hover {
+.btn-search{
+  background-color: #f4f4f4;
+  padding: 8px 13px;
+  border-radius: 50px;
+}
+.btn-search:hover {
   opacity: 1;
 }
 
