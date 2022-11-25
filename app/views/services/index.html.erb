@@ -22,11 +22,17 @@
 
    <div class="row row-cols-3 mt-3 gy-4"  >
     <% @services.each do |service| %>
-      <div class="col">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(<%= service.photo.attached? ?  service.photo.url : 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3387&q=80' %>);">
-        <%=link_to service.category, categories_path(category: service.category), class: "link-light text-decoration-none" %>
-        </div>
-      </div>
+      <%=link_to categories_path(category: service.category) do %>
+
+          <div class="col">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url(<%= service.photo.attached? ?  service.photo.url : 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3387&q=80' %>);">
+
+              <p class="text-decoration-none link-light "><%= service.category %></p>
+
+            </div>
+          </div>
+
+      <% end %>
     <% end %>
 
   </div>
